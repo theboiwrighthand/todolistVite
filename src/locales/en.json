@@ -1,0 +1,22 @@
+{   "todolist-add": "To do list - Add", 
+    "list to do" : "List to do",
+    "write to do" :"write to do" ,
+    "add": "ADD TASK",
+    "update": "UPDATE TASK",
+    "delete": "DELETE TASK",
+    "complete": "COMPLETE",
+    "all" : "ALL",
+    "done": "DONE",
+    "notdone": "NOT DONE",
+    "filter task" : "Filter task" ,
+    "import": "import excel file",
+    "export": "export excel file",
+    "expand": "expand",
+    "collapse": "collapse",
+    "type to search" : "Type to search",
+    "profile" : "Profile",
+    "change password" : " Change password",
+    "logout":"LogOut",
+    "hi": "Hi"
+
+}

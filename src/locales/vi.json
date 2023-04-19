@@ -1,0 +1,22 @@
+{
+    "todolist-add": "To do list - Thêm Task", 
+    "list to do" : "danh sách task",
+    "write to do" :"nhập task" ,
+    "add": "THÊM TASK",
+    "update": "CẬP NHẬP TASK",
+    "delete": "XOÁ TASK",
+    "complete": "Hoàn thành",
+    "all" : " tất cả" ,
+    "done": "đã hoàn thành",
+    "notdone": "chưa hoàn thành",
+    "filter task" : "Lọc task" ,
+    "import": "nhập file excel",
+    "export": "xuất file excel",
+    "expand": "mở rộng",
+    "collapse": "thu gọn",
+    "type to search" : "Nhập tìm kiếm",
+    "profile" : "Thông tin người dùng",
+    "change password" : "Đổi mật khẩu",
+    "logout":"Đăng xuất",
+    "hi": "Xin chào"
+}

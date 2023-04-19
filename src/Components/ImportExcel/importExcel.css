@@ -1,0 +1,29 @@
+
+  #file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#file + label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0071e2;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+
+#file + label:hover {
+    background-color: #0071e2 ;
+    color: white;
+    padding: 0 5px ;
+    border-radius: 5px;
+}
+#file + label:active{
+    transform: translate(10px, 0px);
+    color: rgb(53, 52, 52);
+}

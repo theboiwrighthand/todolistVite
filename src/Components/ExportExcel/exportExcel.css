@@ -1,0 +1,27 @@
+.button-export {
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #0071e2;
+    transition: all 0.5s ease;
+  }
+  
+  .button-export:hover {
+  background-color: #0071e2 ;
+  color: white;
+  padding: 0 5px ;
+  border-radius: 5px;
+  }
+  
+  .button-export:active {
+    transform: translate(10px, 0px);
+    color: rgb(53, 52, 52);
+  }
+
+
+  
+  

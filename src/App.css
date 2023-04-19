@@ -1,0 +1,8 @@
+.to-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #73BFF3;
+  border-radius: 5px;
+  scroll-behavior: smooth;
+}
