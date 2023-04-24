@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import './header.css'
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -17,7 +17,7 @@ import LanguageSelector from '../../Components/LanguageSelector/languageSelector
 import { useTranslation } from 'react-i18next';
 
 
-export default function Header() {
+export default memo( function Header() {
 
     // useEffect(() => {
     //     const getAllData = async () => {
@@ -118,3 +118,4 @@ export default function Header() {
         </nav>
     </>
 }
+)

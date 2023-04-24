@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useRef } from 'react';
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,7 @@ import config from '../../config/config';
 import { getTaskById } from '../../services/getTaskById'
 import { updateTask } from '../../services/updateTask';
 
-export default function Update() {
+export default memo( function Update() {
   let { id } = useParams()
   const [task, setTask] = useState([])
   const inputValue = useRef()
@@ -56,3 +56,4 @@ export default function Update() {
     </div>
   </>
 }
+)

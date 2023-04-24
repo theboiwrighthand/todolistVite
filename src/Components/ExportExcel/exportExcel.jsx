@@ -1,13 +1,12 @@
-import React from 'react'
+import {React, memo} from 'react'
 import './exportExcel.css'
 import * as XLSX from "xlsx"
 import { DownloadOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { message  } from 'antd';
-import { useTransition } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function ExportExcel() {
+ const  ExportExcel = () => {
 
   const{t}= useTranslation()
   const dataExcel = useSelector(state => state.task.taskItem)
@@ -44,3 +43,4 @@ export default function ExportExcel() {
             </p>
         </>
 }
+export default memo(ExportExcel)

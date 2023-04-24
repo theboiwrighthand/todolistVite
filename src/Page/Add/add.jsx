@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, memo } from 'react'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 import CreateTwoToneIcon from '@material-ui/icons/CreateTwoTone';
 import LabelRoundedIcon from '@material-ui/icons/LabelRounded';
@@ -17,7 +17,7 @@ import config from '../../config/config';
 
 
 
-export default function Add() {
+export default memo ( function Add() {
 
     const { t } = useTranslation()
     const [listTask, setListTask] = useState([])
@@ -151,3 +151,4 @@ export default function Add() {
             </div>}
     </>
 }
+)

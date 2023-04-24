@@ -17,7 +17,6 @@ export default function Login() {
         event.preventDefault()
         const res = await login({identifier:emailInput.current.value,password:passInput.current.value})
         const {jwt} = res.data
-        console.log({jwt});
         Cookies.set("jwt",jwt)
         dispatch(loginSuccess(res.data))
        } catch (error) {

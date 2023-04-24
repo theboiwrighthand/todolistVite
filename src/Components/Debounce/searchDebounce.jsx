@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef , memo } from 'react';
 import { debounce } from 'lodash';
 import Axios from 'axios';
 import "./searchDebounce.css"
@@ -58,4 +58,4 @@ function SearchDebounce() {
     </>
 }
 
-export default SearchDebounce;
+export default memo(SearchDebounce);

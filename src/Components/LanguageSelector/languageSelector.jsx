@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import i18n from '../../config/i18n';
 import { setLanguage } from '../../redux/languageSlice';
@@ -19,4 +20,4 @@ const LanguageSelector = () => {
   );
 };
 
-export default LanguageSelector;
+export default memo(LanguageSelector) ;

@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../Footer/Footer.css'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-export default function Footer() {
+export default memo( function  Footer() {
 	return <>
 		<footer className="footer">
 			<div className="container">
@@ -53,3 +53,4 @@ export default function Footer() {
 
 	</>
 }
+)

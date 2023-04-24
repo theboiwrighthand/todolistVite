@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 import * as XLSX from "xlsx"
 import './importExcel.css'
-import { message} from 'antd';
+import { message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { addTaskToList } from '../../redux/taskSlice';
 import { useTranslation } from 'react-i18next';
 
-export default function ImportExcel( ) {
+export default memo(function ImportExcel() {
 
     const { t } = useTranslation()
     const dispatch = useDispatch()
@@ -34,10 +34,10 @@ export default function ImportExcel( ) {
                         id: input.id,
                         attributes: input
                     }
-                    delete output.attributes.id         
+                    delete output.attributes.id
                     return output;
                 });
-                console.log(dataConvert);       
+                console.log(dataConvert);
                 dispatch(addTaskToList(dataConvert))
             };
             reader.readAsBinaryString(f)
@@ -52,4 +52,4 @@ export default function ImportExcel( ) {
             <span> <UploadOutlined /> {t('import')}</span>
         </label>
     </>
-}
+})
