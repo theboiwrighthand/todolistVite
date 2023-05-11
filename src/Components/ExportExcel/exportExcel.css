@@ -16,7 +16,6 @@
   padding: 0 5px ;
   border-radius: 5px;
   }
-  
   .button-export:active {
     transform: translate(10px, 0px);
     color: rgb(53, 52, 52);

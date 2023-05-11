@@ -29,7 +29,7 @@ const DoughnutChart = () => {
       backgroundColor: ["#36a2eb", "#ff6384"],
       options: {
         onClick: (e) => {
-          console.log('aaaa')
+         
         }
       }
     },
@@ -37,7 +37,7 @@ const DoughnutChart = () => {
 
     labels: [`${t('done')}`, `${t('notdone')}`],
   };
-  console.log('Dounut render');
+
   return <>
 
     <h2>{`${t('complete')} : ${completedCount}/${total}`}</h2>
@@ -59,12 +59,12 @@ const DoughnutChart = () => {
     } />
     <p>Task : {taskMap === 0 ? 'hoan thanh' : 'chua hoan thanh'}</p>
 
-    {taskMap === 0 ? completedTask.map((item) => {
+    {/* {taskMap === 0 ? completedTask.map((item) => {
       return <p key={item.id}>{item.attributes.title}</p>
     }) : uncompletedTask.map((item) => {
       return <p key={item.id}>{item.attributes.title}</p>
     })
-    }
+    } */}
   </>
 }
 

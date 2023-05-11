@@ -9,7 +9,7 @@ margin: 0 auto;
 }
 
 .left-section {
-  width: 50%;
+  width: 100%;
 }
 
 .right-section {
@@ -28,7 +28,7 @@ margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.723);
   border-radius: 10px;
   padding: 20px;
-  width: 350px;
+  width: 60%;
   max-width: 90%;
   min-width: 450px;
   min-height: auto;
@@ -224,8 +224,7 @@ ul {
 
 /* css btn */
 .see-all {
-  margin-left: 83%;
-  display: inline-block;
+
   padding: 0 0 0 5px;
   text-align: right;
   font-size: 12px;
@@ -237,6 +236,7 @@ ul {
 }
 
 .see-all:hover {
+
   background-color: #0071e2 ;
   color: white;
   padding: 0 5px 0 0 ;

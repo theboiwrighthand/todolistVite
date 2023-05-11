@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, memo } from 'react'
+import '../Home/todoApp.css'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 import CreateTwoToneIcon from '@material-ui/icons/CreateTwoTone';
 import LabelRoundedIcon from '@material-ui/icons/LabelRounded';
@@ -36,6 +37,7 @@ export default memo ( function Add() {
             setShowLoading(false)     
         }
         getData()
+        
         // console.log(param.get('?='));
     }, [])
 

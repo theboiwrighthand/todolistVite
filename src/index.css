@@ -10,10 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
- 
-  background-image: linear-gradient(to right top, #92dce6, #75d0eb, #5fc3f1, #5ab4f5, #68a2f4, #7f9bf1, #9594ec, #a88ce4, #ba91e2, #ca97e0, #d79ede, #e3a6dd);
+ background-color: #4e4376;
 }
-
 .inputStyles {
   @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-violet-600 focus:border-violet-600 focus:outline-none transition dark:bg-slate-800;
 }
@@ -27,15 +25,17 @@ body {
 }
 
 @layer components {
-  .tasksList > li:first-of-type article {
-    @apply bg-violet-600 text-slate-100 dark:bg-violet-800;
+  .tasksList > li article,
+    .description {
+    @apply hover:bg-violet-400 hover:text-slate-100 dark:bg-violet-800;
   }
-  .tasksList > li:first-of-type article .description {
-    @apply text-violet-300;
-  }
-  .tasksList > li:first-of-type article > div {
+
+  /* .tasksList > li article .description {
+    @apply hover:bg-violet-400 hover:text-slate-100 dark:bg-violet-800;
+  } */
+  .tasksList > li article > div {
     @apply border-violet-500 dark:border-violet-700;
-  }
+  } 
   .listView1 article {
     @apply h-40;
   }
