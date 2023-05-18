@@ -184,8 +184,8 @@ export default function TodoApp() {
                             <ul className="tasksList mt-4 grid gap-2 sm:gap-4 xl:gap-6 grid-cols-1">
                                 {listTask.map((item, index) => {
                                     return <li key={item.id * 100}>
-                                        <a href="#" title='Main' className={`${item.attributes.complete ? 'bg-green-500  hover:bg-green-400' : 'bg-red-500 hover:bg-red-400' } ml-auto mr-4 w-min whitespace-nowrap overflow-hidden max-w-[10rem] text-center text-ellipsis text-slate-100  px-4 py-1 rounded-t-md transition block`}>
-                                           {item.attributes.complete ? 'Completed' : 'Uncompleted'}</a>
+                                        <a href="#" title='Main' className={`${item.attributes.complete ? 'bg-green-500  hover:bg-green-400' : 'bg-red-500 hover:bg-red-400'} ml-auto mr-4 w-min whitespace-nowrap overflow-hidden max-w-[10rem] text-center text-ellipsis text-slate-100  px-4 py-1 rounded-t-md transition block`}>
+                                            {item.attributes.complete ? 'Completed' : 'Uncompleted'}</a>
                                         <article className="bg-slate-100 rounded-lg p-3 sm:p-4 flex text-left transition hover:shadow-lg hover:shadow-slate-300  flex-row sm:h-32">
                                             <div className="flex flex-col flex-auto mr-6">
                                                 <div className='flex items-center justify-between mb-1'>
