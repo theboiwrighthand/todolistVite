@@ -13,6 +13,7 @@ import LanguageSelector from '../../Components/LanguageSelector/languageSelector
 import Time from '../../Page/Header/time';
 import { setSidebarStatus } from '../../redux/sidebarSlice';
 import MenuIcon from '@mui/icons-material/Menu';
+import'./searchDebounce.css'
 
 function SearchDebounce() {
     const [visible, setVisible] = useState(false);
@@ -28,6 +29,10 @@ function SearchDebounce() {
     const openDropdown = () => {
         setVisible(true);
     }
+    const closeDropdown = () => {
+        setVisible(false);
+    }
+
     const showModal = () => {
         setIsModalOpen(true);
 
@@ -52,7 +57,12 @@ function SearchDebounce() {
 
     const handleInputChange = () => {
         const keyword = inputValue.current.value;
-        debounceDropDown(keyword);
+        console.log();
+        if(keyword ==''){
+            setDropdownOptions([])
+        }else{
+            debounceDropDown(keyword);
+        }
     }
 
     const handleSidebar = () => {
@@ -75,11 +85,12 @@ function SearchDebounce() {
                     ref={inputValue}
                     placeholder={t('Search task')}
                     onClick={openDropdown}
+                    onBlur={closeDropdown}
                     onChange={handleInputChange} />
                 <ul>
                     {visible &&
                         dropdownOptions.map((item) => (
-                            <li key={item?.id}>
+                            <li key={item?.id} className='results-list'>
                                 <Link onClick={() => {
                                     setDropdownOptions([])
                                 }}
