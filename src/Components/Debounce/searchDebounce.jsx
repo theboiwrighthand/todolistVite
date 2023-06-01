@@ -57,8 +57,7 @@ function SearchDebounce() {
 
     const handleInputChange = () => {
         const keyword = inputValue.current.value;
-        console.log();
-        if(keyword ==''){
+        if(keyword == ''){
             setDropdownOptions([])
         }else{
             debounceDropDown(keyword);
