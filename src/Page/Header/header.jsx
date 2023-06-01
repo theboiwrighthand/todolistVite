@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/authSlice';
 import { Link } from 'react-router-dom';
 import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, message, Space } from 'antd';
+import { Dropdown, message, Space,Modal } from 'antd';
 import { useEffect } from 'react';
 import { getAllTasks } from '../../services/getAll';
 import { addTaskToList } from '../../redux/taskSlice';
 import SearchDebounce from '../../Components/Debounce/searchDebounce';
-import { Modal } from 'antd';
+
 import { CaretRightOutlined } from '@ant-design/icons';
 import LanguageSelector from '../../Components/LanguageSelector/languageSelector';
 import { useTranslation } from 'react-i18next';

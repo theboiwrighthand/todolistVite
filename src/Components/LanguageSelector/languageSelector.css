@@ -1,0 +1,13 @@
+.setLng{
+    width: 30px;
+    padding: 3px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background-color: #c1cad2;
+}
+.setLng:active{
+    transition: linear 1s;
+    transform: scale(1.2);
+}

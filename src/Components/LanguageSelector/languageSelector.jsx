@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import i18n from '../../config/i18n';
 import { setLanguage } from '../../redux/languageSlice';
-
+import "./languageSelector.css"
 
 
 const LanguageSelector = () => {
@@ -13,9 +13,14 @@ const LanguageSelector = () => {
     i18n.changeLanguage(lng)
   };
   return (
-    <div style={{display:'flex',}}>
-      <button style={{ cursor: 'pointer', width : '22px' ,border :'none', margin :'2px',padding:'2px', backgroundColor:'#AED2F9',color :' black'}} onClick={() => changeLanguage('en')}>EN</button>
-      <button style={{ cursor: 'pointer', width : '22px',border :'none', margin :'2px',padding:'2px', backgroundColor:'#F54768',color :' black'}} onClick={() => changeLanguage('vi')}>VI</button>
+    <div style={{display:'flex', justifyContent:'center'}}>
+
+      <button className='setLng colortext' onClick={() => changeLanguage('en')}>
+        <img src="https://cacnuoc.vn/wp-content/uploads/2016/04/UnionFlag.png" alt="" />
+      </button>
+      <button className='setLng colortext' onClick={() => changeLanguage('vi')}>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkuo0yYIHeat5zP9eeZbnzV43AULztiE7laQ&usqp=CAU" alt="" />
+      </button>
     </div>
   );
 };

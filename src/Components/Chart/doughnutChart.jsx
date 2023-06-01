@@ -29,7 +29,7 @@ const DoughnutChart = () => {
       backgroundColor: ["#36a2eb", "#ff6384"],
       options: {
         onClick: (e) => {
-         
+
         }
       }
     },
@@ -40,7 +40,7 @@ const DoughnutChart = () => {
 
   return <>
 
-    <h2>{`${t('complete')} : ${completedCount}/${total}`}</h2>
+    <h2 className="colortext">{`${t('complete')} : ${completedCount}/${total}`}</h2>
     <Doughnut ref={chartRef} data={data} onClick={(event) => {
       const ChartElement = getElementAtEvent(chartRef.current, event);
       if (ChartElement.length > 0) {
@@ -57,9 +57,9 @@ const DoughnutChart = () => {
       }
     }
     } />
-    <p>Task : {taskMap === 0 ? 'hoan thanh' : 'chua hoan thanh'}</p>
+    {/* <p className="colortext">Task : {taskMap === 0 ? 'hoan thanh' : 'chua hoan thanh'}</p>
 
-    {/* {taskMap === 0 ? completedTask.map((item) => {
+    {taskMap === 0 ? completedTask.map((item) => {
       return <p key={item.id}>{item.attributes.title}</p>
     }) : uncompletedTask.map((item) => {
       return <p key={item.id}>{item.attributes.title}</p>

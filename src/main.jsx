@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./config/axios"; 
 import {store}from'./redux/store'
 import {Provider} from 'react-redux'
+import NavBar from './Page/Header/navBar';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

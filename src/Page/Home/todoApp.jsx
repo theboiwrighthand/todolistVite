@@ -183,7 +183,7 @@ export default function TodoApp() {
                         <div>
                             <ul className="tasksList mt-4 grid gap-2 sm:gap-4 xl:gap-6 grid-cols-1">
                                 {listTask.map((item, index) => {
-                                    return <li key={item.id * 100}>
+                                    return <li key={item.id * 100} className='colortext'>
                                         <a href="#" title='Main' className={`${item.attributes.complete ? 'bg-green-500  hover:bg-green-400' : 'bg-red-500 hover:bg-red-400'} ml-auto mr-4 w-min whitespace-nowrap overflow-hidden max-w-[10rem] text-center text-ellipsis text-slate-100  px-4 py-1 rounded-t-md transition block`}>
                                             {item.attributes.complete ? 'Completed' : 'Uncompleted'}</a>
                                         <article className="bg-slate-100 rounded-lg p-3 sm:p-4 flex text-left transition hover:shadow-lg hover:shadow-slate-300  flex-row sm:h-32">
@@ -193,8 +193,8 @@ export default function TodoApp() {
                                                 </div>
                                                 <p className='description mb-2 line-clamp-2 sm:line-clamp-1' > {item.attributes.title} </p>
                                                 <time className='mt-auto flex w-full'>
-                                                    <img src={Calendar} className="mr-2 w-4 sm:w-5" alt="Calendar" />
-                                                    {moment(item.attributes.date).format("DD/MM/YYYY")}
+                                                    <img src={Calendar} className="mr-2 w-4 sm:w-5 " alt="Calendar" />
+                                                    {moment(item.attributes.date).format("DD-MM-YYYY")}
                                                 </time>
                                             </div>
                                             <div className='flex items-center ' >
