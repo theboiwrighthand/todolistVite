@@ -16,7 +16,7 @@ const LanguageSelector = () => {
     <div style={{display:'flex', justifyContent:'center'}}>
 
       <button className='setLng colortext' onClick={() => changeLanguage('en')}>
-        <img src="https://cacnuoc.vn/wp-content/uploads/2016/04/UnionFlag.png" alt="" />
+        <img src="https://cdn.pixabay.com/photo/2017/03/14/21/00/american-flag-2144392_960_720.png" alt="" />
       </button>
       <button className='setLng colortext' onClick={() => changeLanguage('vi')}>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkuo0yYIHeat5zP9eeZbnzV43AULztiE7laQ&usqp=CAU" alt="" />

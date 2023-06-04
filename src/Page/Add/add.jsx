@@ -15,15 +15,16 @@ import { useDispatch } from 'react-redux';
 import { addTaskToList } from '../../redux/taskSlice';
 import { useTranslation } from 'react-i18next';
 import config from '../../config/config';
+import SkeletonLoading from '../../Components/Skeleton/SkeletonLoading';
 
 
 
-export default memo ( function Add() {
+export default memo(function Add() {
 
     const { t } = useTranslation()
     const [listTask, setListTask] = useState([])
-    const inputValue = useRef()
-    const textAlert = useRef()
+    const inputValue = useRef(null)
+    const textAlert = useRef(null)
     const inputFileImage = useRef()
     const [showLoading, setShowLoading] = useState(true)
     const dispatch = useDispatch()
@@ -34,23 +35,26 @@ export default memo ( function Add() {
             const response = await getAllTasks();
             if (response, response.data.data) setListTask(response.data.data);
             dispatch(addTaskToList(response.data.data))
-            setShowLoading(false)     
+            setShowLoading(false)
         }
         getData()
-        
+
         // console.log(param.get('?='));
     }, [])
 
 
     const handleFileChange = () => {
-            const Imagechoose = inputFileImage.current.files[0]
-            const image = document.querySelector("#imagechoosed");
-            image.src = URL.createObjectURL(Imagechoose);
+        const imageChoose = inputFileImage.current.files[0];
+        const image = document.querySelector("#imagechoosed");
+        if (imageChoose) {
+            image.src = URL.createObjectURL(imageChoose);
+            console.log(imageChoose);
+        }
     };
 
     const addTaskHandler = async () => {
         const newListTask = inputValue.current.value;
-        if (newListTask.length > 0, inputFileImage.current.files[0] ) {
+        if (newListTask.length > 0, inputFileImage.current.files[0]) {
             const request = {
                 data: {
                     title: newListTask
@@ -67,19 +71,19 @@ export default memo ( function Add() {
             setListTask(responseUpdate.data.data)
             inputValue.current.value = ''
             textAlert.current.innerHTML = ''
-        } else if(newListTask.length > 0){
-            const newListTask = inputValue.current.value;       
-                const request = {
-                    data: {
-                        title: newListTask
-                    }
+        } else if (newListTask.length > 0) {
+            const newListTask = inputValue.current.value;
+            const request = {
+                data: {
+                    title: newListTask
                 }
-                const response = await postTask(request, config);
-                setListTask([...listTask, response.data.data])
-                inputValue.current.value = ''
-                textAlert.current.innerHTML = ''
+            }
+            const response = await postTask(request, config);
+            setListTask([...listTask, response.data.data])
+            inputValue.current.value = ''
+            textAlert.current.innerHTML = ''
         }
-         else { textAlert.current.innerHTML = `*Nhấp đi đã bạn ôi*` }
+        else { textAlert.current.innerHTML = `*Nhấp đi đã bạn ôi*` }
     }
 
 
@@ -100,8 +104,10 @@ export default memo ( function Add() {
                     <div className='upload'>
                         <img id='imagechoosed' src="https://4.bp.blogspot.com/-8kN5uucyxDI/XD6vAIw18dI/AAAAAAAA7kU/uTwzqq0EbvgGyzRaNuLpjzARZIKOWbVoACLcBGAs/s1280/no-thumbnail.jpg" alt="error" />
                         <div className='round'>
-                            <input className='inputImg' ref={inputFileImage} onChange={handleFileChange} type="file"/>
-                            <AddAPhotoIcon/>
+                            <input className='inputImg' type="file"
+                                ref={inputFileImage}
+                                onChange={handleFileChange} />
+                            <AddAPhotoIcon />
                         </div>
                     </div>
                     <input placeholder="write something. . ." className="input-field" type="text" ref={inputValue} />
@@ -119,15 +125,15 @@ export default memo ( function Add() {
                 <ul>
                     {listTask.map((item, index) => {
                         return <li key={item.id * 100} className='line-todo'>
-                            {index+1}
+                            {index + 1}
                             <LabelRoundedIcon style={{ color: "#0071e2", fontSize: "50px" }} />
                             {item?.attributes?.image?.data?.attributes?.url ?
-                            <LazyLoadImage src={`https://backoffice.nodemy.vn${item?.attributes?.image?.data?.attributes?.url}`}
-                                width={50} height={50}
-                                alt="Image Alt"
-                                placeholdersrc={`https://backoffice.nodemy.vn${item?.attributes?.image?.data?.attributes?.url}`}
-                                effect="blur" /> 
-                            : null}
+                                <LazyLoadImage src={`https://backoffice.nodemy.vn${item?.attributes?.image?.data?.attributes?.url}`}
+                                    width={50} height={50}
+                                    alt="Image Alt"
+                                    placeholdersrc={`https://backoffice.nodemy.vn${item?.attributes?.image?.data?.attributes?.url}`}
+                                    effect="blur" />
+                                : null}
 
                             <span className='content'>{item?.attributes?.title}</span>
                             <div style={{ display: 'flex' }}>
@@ -142,15 +148,8 @@ export default memo ( function Add() {
                 </ul>
             </div>
         </div>
-            : <div className='card-todo'>
-                <br /> <br /> <br />
-                <Skeleton.Input active size={"large"} block={true} />
-                <br />
-                <Skeleton active paragraph={{ rows: 1, width: "100%" }} title={false} />
-                <br />
-                <Skeleton.Input active size={"large"} block={true} />
-                <Skeleton active paragraph={{ rows: 4, width: "100%" }} title={false} />
-            </div>}
+            : <SkeletonLoading />
+        }
     </>
 }
 )

@@ -19,7 +19,6 @@ export default function Login() {
         const {jwt} = res.data
         Cookies.set("jwt",jwt)
         dispatch(loginSuccess(res.data))
-        console.log(res.data);
        } catch (error) {
         message.info('sai user password')
        }

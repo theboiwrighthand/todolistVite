@@ -1,4 +1,4 @@
-import React, { memo, useState,useEffect } from 'react'
+import React, { memo, useState, useEffect } from 'react'
 import './navBar.css'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import CreateIcon from '@material-ui/icons/Create';
@@ -41,7 +41,7 @@ export default memo(function NavBar() {
                         <span className='colortext'>Wellcome! {username}</span>
                     </div>
                 </div>
-                
+
 
                 <div className="menu-items">
                     <ul className="nav-links">
@@ -61,15 +61,14 @@ export default memo(function NavBar() {
 
                     <ul className="logout-mode">
                         <li><a href="#" onClick={handleLogout}>
-                            <i><LogoutIcon/></i>
+                            <i><LogoutIcon /></i>
                             <span className="link-name">Logout</span>
                         </a></li>
                         <li className="mode">
-                            <ButtonDarkMode/>
+                            <ButtonDarkMode />
                         </li>
                         <li >
-                          
-                            <LanguageSelector/>
+                            <LanguageSelector />
                         </li>
                     </ul>
                 </div>

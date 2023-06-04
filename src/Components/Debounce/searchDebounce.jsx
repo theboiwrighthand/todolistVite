@@ -29,9 +29,9 @@ function SearchDebounce() {
     const openDropdown = () => {
         setVisible(true);
     }
-    const closeDropdown = () => {
-        setVisible(false);
-    }
+    // const closeDropdown = () => {
+    //     setVisible(false);
+    // }
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -84,7 +84,7 @@ function SearchDebounce() {
                     ref={inputValue}
                     placeholder={t('Search task')}
                     onClick={openDropdown}
-                    onBlur={closeDropdown}
+                    // onBlur={closeDropdown}
                     onChange={handleInputChange} />
                 <ul>
                     {visible &&
