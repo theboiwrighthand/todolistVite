@@ -41,10 +41,10 @@ function ListTask({ ...props}) {
                                     type="checkbox"
                                     className='bg-emerald-200 hover:bg-amber-400 cursor-pointer w-5 h-5 border-3 border-rose-500 rounded-lg checked:bg-green-500'
                                     checked={item.attributes.complete}
-                                    onChange={(e) => handleCheck(e, index, item.id)} />
+                                    onChange={(e) => props.handleCheck(e, index, item.id)} />
                                 <button title="Delete Task"
                                     className='ml-2 transition hover:text-slate-700 hover:opacity-50'
-                                    onClick={() => { deleteTaskHandler(item.id) }}>
+                                    onClick={() => { props.deleteTaskHandler(item.id) }}>
                                     <img src={Trash} alt="Trash" className='w-5 h-5 sm:w-6 sm:h-6 ' />
                                 </button>
                                 <Link to={`/update/${item.id}`}>

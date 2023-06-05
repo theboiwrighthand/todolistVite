@@ -16,6 +16,7 @@ import { addTaskToList } from '../../redux/taskSlice';
 import { useTranslation } from 'react-i18next';
 import config from '../../config/config';
 import SkeletonLoading from '../../Components/Skeleton/SkeletonLoading';
+import ListTask from '../../Components/ListTask/ListTask';
 
 
 
@@ -147,6 +148,7 @@ export default memo(function Add() {
                     })}
                 </ul>
             </div>
+            
         </div>
             : <SkeletonLoading />
         }

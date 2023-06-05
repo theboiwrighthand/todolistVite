@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import { Routes,Route} from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
 import axios from 'axios';

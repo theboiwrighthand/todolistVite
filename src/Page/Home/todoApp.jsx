@@ -178,7 +178,9 @@ export default function TodoApp() {
                             isShow={isShow}
                             totalPage={totalPage}
                             handleChangePage={handleChangePage}
-                            page={page} />
+                            page={page}
+                            handleCheck={handleCheck}
+                            deleteTaskHandler={deleteTaskHandler} />
                     </div>
                     : <SkeletonLoading />
                 }

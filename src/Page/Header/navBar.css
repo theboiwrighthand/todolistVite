@@ -37,7 +37,7 @@
 }
 /* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
@@ -49,7 +49,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+    background: #7ab4ef;
 }
 
 .mainbody.dark::-webkit-scrollbar-thumb:hover,
