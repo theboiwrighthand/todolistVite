@@ -8,11 +8,12 @@ import moment from 'moment';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
-function ListTask({ ...props}) {
+function ListTask(props) {
+    const{listTask,isShow,totalPage,handleChangePage,page,handleCheck,deleteTaskHandler} = props
     return <>
         <div>
             <ul className="tasksList mt-4 grid gap-2 sm:gap-4 xl:gap-6 grid-cols-1">
-                {props.listTask.map((item, index) => {
+                {listTask.map((item, index) => {
                     return <li key={item.id * 100} className='colortext'>
                         <a href="#" title='Main' className={`${item.attributes.complete ? 'bg-green-500  hover:bg-green-400' : 'bg-red-500 hover:bg-red-400'} ml-auto mr-4 w-min whitespace-nowrap overflow-hidden max-w-[10rem] text-center text-ellipsis text-slate-100  px-4 py-1 rounded-t-md transition block`}>
                             {item.attributes.complete ? 'Completed' : 'Uncompleted'}</a>
@@ -41,10 +42,10 @@ function ListTask({ ...props}) {
                                     type="checkbox"
                                     className='bg-emerald-200 hover:bg-amber-400 cursor-pointer w-5 h-5 border-3 border-rose-500 rounded-lg checked:bg-green-500'
                                     checked={item.attributes.complete}
-                                    onChange={(e) => props.handleCheck(e, index, item.id)} />
+                                    onChange={(e) => handleCheck(e, index, item.id)} />
                                 <button title="Delete Task"
                                     className='ml-2 transition hover:text-slate-700 hover:opacity-50'
-                                    onClick={() => { props.deleteTaskHandler(item.id) }}>
+                                    onClick={() => { deleteTaskHandler(item.id) }}>
                                     <img src={Trash} alt="Trash" className='w-5 h-5 sm:w-6 sm:h-6 ' />
                                 </button>
                                 <Link to={`/update/${item.id}`}>
@@ -58,7 +59,7 @@ function ListTask({ ...props}) {
                     </li>
                 })}
             </ul>
-            {!props.isShow ? <Pagination showSizeChanger={false} total={props.totalPage} pageSize={5} onChange={props.handleChangePage} defaultCurrent={props.page} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} /> : null}
+            {!isShow ? <Pagination showSizeChanger={false} total={totalPage} pageSize={5} onChange={handleChangePage} defaultCurrent={page} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} /> : null}
         </div>
     </>
 }

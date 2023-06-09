@@ -3,7 +3,7 @@ import './todoApp.css';
 import AddIcon from '@material-ui/icons/Add';
 import { deleteTask } from '../../services/deleteTask';
 import { Link } from 'react-router-dom';
-import {Select} from 'antd';
+import { Select } from 'antd';
 import { getTasksByPagination } from '../../services/getTasksByPagination';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { getAllTasks } from '../../services/getAll';
@@ -100,9 +100,13 @@ export default function TodoApp() {
             return item.id !== id
         })
         setListTask(newListTask)
-        if (listTask.length === 0) { handleChangePage() }
-        const response = await getAllTasks()
-        dispatch(response.data.data)
+        if (listTask.length == 1) {
+            const response = await getTasksByPagination(1)
+            console.log(response);
+            setListTask(response.data.data)
+            dispatch(response.data.data)
+        }
+
     }
     //checkbox onchange
     const handleCheck = async (e, index, id) => {
@@ -135,6 +139,7 @@ export default function TodoApp() {
             setListTask(response.data.data)
         }
     }
+    console.log('1');
     return <>
         <div>
             <section className='left-section'>
